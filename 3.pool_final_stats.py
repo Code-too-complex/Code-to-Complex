@@ -1,3 +1,9 @@
+# This script centralizes BindCraft results by recursively searching the current 
+# directory for 'final_design_stats.csv' files. It organizes them into a 'stats/' 
+# folder, grouping them by the original Run folder name and renaming the CSVs 
+# with their sub-path (e.g., trajectory ID) to ensure every file remains unique.
+#the scripts looks in indefinetive depth. 
+
 #!/usr/bin/env python3
 
 import os
@@ -49,3 +55,4 @@ for file_path in csv_files:
     print(f"Copied: {file_path} -> {first_folder}/{filename}")
 
 print(f"All final_design_stats.csv files have been organized by first-level folders in {dest_dir}")
+
