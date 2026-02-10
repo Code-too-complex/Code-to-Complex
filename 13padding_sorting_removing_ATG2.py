@@ -1,3 +1,21 @@
+# DESCRIPTION:
+# This script prepares DNA sequences for synthesis and cloning. It processes 
+# 'Insert sequences' by:
+# 1. Removing the start ATG (to allow for NdeI/vector-based start sites).
+# 2. Adding 6xHis-tags and Stop Codons based on the chosen Tag Terminus.
+# 3. Applying "DNA Padding" to ensure all sequences meet the 300 bp minimum 
+#    required by most synthesis providers (e.g., Twist or IDT).
+# 4. Sorting sequences by Tag Terminus for organized ordering.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Run from the Project Root.
+# 2. Input: 'RXFP1_ago.csv' (the output from your previous cleaning script).
+# 3. Optional: 'DNA_Padding.txt' containing non-functional DNA for length padding.
+# 4. Output: 'processed_RXFP1_ago.csv', the final "ready-to-order" spreadsheet.
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python cloning_architect.py'
+
 import pandas as pd
 
 # Read the CSV file
@@ -134,4 +152,5 @@ except FileNotFoundError:
     print("Please ensure RXFP1_ago.csv is in the current directory.")
 except Exception as e:
     print(f"Error processing file: {str(e)}")
+
 
