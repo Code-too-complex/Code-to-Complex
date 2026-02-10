@@ -1,3 +1,20 @@
+# DESCRIPTION:
+# This script resolves duplicates within the './selection' pooled folders. It groups
+# PDBs by their seed number ('_sXXX_'), then compares them against the Master CSV.
+# The best-ranked version of a seed is moved to a 'unique/' subfolder, while 
+# lower-ranked duplicates are moved to 'not_unique_basefold/'. It includes 
+# robust matching logic to handle minor naming discrepancies (e.g., '_ag1_' vs '_7_').
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Run from the Project Root.
+# 2. Input: Looks for the 'stats/merged_all_final_design_stats.csv' file and the 
+#    pooled folders inside './selection/'.
+# 3. Output: Creates 'unique/' and 'not_unique_basefold/' inside each pooled directory.
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python script_name.py'
+# Use 'python script_name.py --auto-confirm' to bypass the confirmation prompt.
+
 import os
 import pandas as pd
 import shutil
@@ -179,3 +196,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
