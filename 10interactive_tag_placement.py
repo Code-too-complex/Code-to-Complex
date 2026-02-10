@@ -1,3 +1,20 @@
+# DESCRIPTION:
+# This interactive script evaluates the N and C termini of your binder (Chain B) 
+# relative to the target (Chain A). It recommends the "safest" terminal for 
+# tag placement by identifying which end is furthest from the binding site and 
+# has the fewest potentially disruptive polar contacts.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Run from the Project Root.
+# 2. Input: Analyzes PDB files within the './selection' folders (or a custom path).
+# 3. Output: Generates 'interactive_tag_placement_results.csv' with distance 
+#    metrics and a specific recommendation (N-term vs C-term) for every model.
+#
+# HOW TO EXECUTE:
+# Requires Biopython and NumPy: 'pip install biopython numpy'
+# Run from terminal: 'python tag_analyzer.py'
+# Follow the on-screen prompts to select your directory and target chain (not the binder).
+
 #!/usr/bin/env python3
 import os
 import numpy as np
