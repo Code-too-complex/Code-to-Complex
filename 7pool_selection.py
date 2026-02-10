@@ -1,3 +1,15 @@
+# DESCRIPTION:
+# This script scans for PDBs in 'podium' folders (the final winners of the filtering 
+# and ranking process) and copies them into a central './selection' directory.
+
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Place this in the project root.
+# 2. Input: Looks for the pattern: XXXX/pooled/aligned/filtered_pdbs_jc_XXXA/podium/
+# 3. Output: Creates a new directory './selection' in the project root.
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python script_name.py'
+
 import os
 import shutil
 import glob
