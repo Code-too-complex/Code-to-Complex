@@ -1,3 +1,18 @@
+# DESCRIPTION:
+# This script renames and centralizes filtered PDB models into 'podium' directories.
+# It matches PDB filenames to rankings stored in the 'stats' CSV files.
+# Resulting files are prefixed with their local and master ranks (e.g., '1_15_model.pdb'),
+# making it easy to identify the top-performing designs in any file browser or PyMOL.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Place this in your project root (same level as the 'stats' folder).
+# 2. The Reference File: Requires 'stats/merged_all_final_design_stats.csv' to exist.
+# 3. The Target Files: Looks for PDBs in '.../pooled/aligned/filtered_pdbs_jc_*' folders.
+# 4. Output: Creates a 'podium' folder inside each 'aligned' directory.
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python script_name.py'
+
 import os
 import pandas as pd
 import shutil
