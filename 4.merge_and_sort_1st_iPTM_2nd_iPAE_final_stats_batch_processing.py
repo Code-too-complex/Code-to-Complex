@@ -1,3 +1,8 @@
+# This script processes the 'stats' folder to merge all individual BindCraft stat CSVs.
+# It creates per-run summaries and one 'Master' file containing every design, 
+# automatically ranking them by Average_i_pTM (High to Low) and Average_i_pAE (Low to High).
+# It adds 'source_file' and 'source_subfolder' columns to track the origin of every hit.
+
 import pandas as pd
 import glob
 import os
@@ -168,4 +173,5 @@ else:
 
 print("Pooling completed!")
 print(f"All output files created in: {stats_dir}")
+
 
