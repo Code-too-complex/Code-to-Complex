@@ -1,3 +1,20 @@
+# DESCRIPTION:
+# This utility script iterates through all PDB files in a specified directory 
+# and extracts the primary amino acid sequence of a target chain. It converts 
+# 3-letter residue codes (MET-GLY-ALA) into 1-letter codes (MGA) and exports 
+# the results into a clean Excel spreadsheet.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Can be run from anywhere, provided you point it to 
+#    the correct folder.
+# 2. Input: A folder containing your final PDB finalists (e.g., './selection/unique').
+# 3. Output: An Excel (.xlsx) file containing PDB IDs and their sequences.
+#
+# HOW TO EXECUTE:
+# Requires Biopython, Pandas, and Openpyxl: 'pip install biopython pandas openpyxl'
+# Run from terminal with flags:
+#   python extract_seq.py --folder ./selection/unique --chain B --output final_order.xlsx
+
 from Bio import PDB
 from Bio.PDB.Polypeptide import protein_letters_3to1 as three_to_one
 import os
@@ -6,7 +23,7 @@ import sys
 import argparse
 
 def extract_sequences(pdb_dir, target_chain, output_file):
-    """Extract sequences from PDB files"""
+    """Extract sequences from PDB files""" a
     
     # Validate folder path
     if not os.path.exists(pdb_dir):
@@ -96,3 +113,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
