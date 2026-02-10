@@ -1,3 +1,11 @@
+# This script automates the spatial alignment of PDB models to a reference (RXFP1_Relaxin_LRR_Glyco).
+# Purpose: To facilitate the removal of generated structures that physically clash with a 
+# 'placeholder' molecule—manually positioned to represent the volume of missing glycans.
+# This script recursively finds PDB files within 'pooled' directories (ignoring 'Ranked' folders),
+# loads them into PyMOL, and aligns them to a reference structure (RXFP1_Relaxin_LRR_Glyco.pdb).
+# It then applies basic styling (gray cartoon for models, red for reference) 
+# and saves the newly aligned coordinates into local 'aligned' subdirectories.
+
 from pymol import cmd
 import glob
 import os
@@ -67,4 +75,5 @@ for pdb_file in pdb_files:
     print(f"Saved aligned structure: {output_file}")
 
 print("Alignment and saving completed!")
+
 
