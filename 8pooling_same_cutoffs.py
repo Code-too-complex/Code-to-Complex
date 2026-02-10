@@ -1,3 +1,21 @@
+# DESCRIPTION:
+# This script scans the './selection' directory for subfolders sharing the same 
+# name (e.g., 'filtered_pdbs_jc_5.0A'). It pools all PDBs from these scattered 
+# folders into a single, unified directory at the root of './selection'. 
+# It includes smart renaming to prevent filename collisions if different runs 
+# produced files with identical names.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Run this from the Project Root.
+# 2. Input: Operates exclusively on the './selection' folder created by the 
+#    previous script.
+# 3. Output: Creates new, consolidated folders inside './selection/' named 
+#    directly after your filter criteria (e.g., './selection/filtered_pdbs_jc_5.0A/').
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python script_name.py'
+# Use 'python script_name.py --auto-confirm' to skip the manual (y/n) prompt.
+
 import os
 import shutil
 import glob
@@ -98,3 +116,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
