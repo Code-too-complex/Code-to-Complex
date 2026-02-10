@@ -1,3 +1,20 @@
+# DESCRIPTION:
+# This script is the final "Lab-Ready" formatter. It cleans up complex, 
+# technical PDB identifiers (e.g., removing MPNN model numbers and project 
+# prefixes) into short, readable names for synthesis orders. It also 
+# integrates tag placement recommendations and calculates final AA lengths.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Run from the Project Root.
+# 2. Input: Requires 'chain_B_sequences_aa.xlsx' (from the extraction script).
+# 3. Optional: If a 'Tag' column is added to the input Excel, it will be 
+#    merged into the final 'Name'.
+# 4. Output: Produces 'cleaned_sequences.csv', the final order form.
+#
+# HOW TO EXECUTE:
+# Run from terminal: 'python script_name.py'
+# Ensure 'pandas', 'openpyxl', and 're' are installed in your environment.
+
 import pandas as pd
 import re
 
@@ -88,4 +105,5 @@ def process_sequence_file(input_file='chain_B_sequences_aa.xlsx', output_file='c
 # Run the processing
 if __name__ == "__main__":
     result = process_sequence_file()
+
 
