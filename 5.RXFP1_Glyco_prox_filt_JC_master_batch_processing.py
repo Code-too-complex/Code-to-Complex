@@ -1,3 +1,21 @@
+# DESCRIPTION:
+# This script performs a spatial "clash check" to exclude protein designs that overlap 
+# with a glycosylation site. It calculates the minimum Euclidean distance between 
+# a 'marker' water molecule (HOH) in a reference PDB and Chain B of the design.
+#
+# SETUP & DIRECTORY STRUCTURE:
+# 1. Script Location: Place in the project root (the folder containing 'pooled/' directories).
+# 2. The Reference File: 'RXFP1_Glyco_marker.pdb' must be in the same folder as this script.
+#    CRUCIAL: This file must contain a water residue (HOH) at the glycosylation center.
+# 3. The Target Files: The script recursively finds all 'aligned' folders nested inside 
+#    'pooled' directories and processes all PDBs within them.
+#
+# HOW TO EXECUTE:
+# Requires Biopython: 'pip install biopython'
+# Run from terminal with two arguments:
+#   Usage: python 5.RXFP1_Glyco_prox_filt_JC_master_batch_processing.py.py <threshold_angstroms> <backbone_only_boolean0 for all atoms, 1 for backbone atoms>
+#   Example: python 5.RXFP1_Glyco_prox_filt_JC_master_batch_processing.py.py 5.0 0
+
 import os
 import glob
 import shutil
